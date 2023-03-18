@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Heart Disease Risk Assessment Form</title>
+  </head>
+  <body>
+    <h1>Heart Disease Risk Assessment Form</h1>
+    <form action ="{{url_for('predict')}}"method="post">
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age"><br>
+
+      <label for="sex">Sex:</label>
+      <select id="sex" name="sex">
+        <option value="1">Male</option>
+        <option value="0">Female</option>
+      </select><br>
+
+      <label for="cp">Chest Pain Type:</label>
+      <select id="cp" name="cp">
+        <option value="1">Typical angina</option>
+        <option value="2">Atypical angina</option>
+        <option value="3">Non-anginal pain</option>
+        <option value="4">Asymptomatic</option>
+      </select><br>
+
+      <label for="trestbps">Resting Blood Pressure:</label>
+      <input type="number" id="trestbps" name="trestbps"><br>
+
+      <label for="chol">Cholesterol:</label>
+      <input type="number" id="chol" name="chol"><br>
+
+      <label for="fbs">Fasting Blood Sugar:</label>
+      <select id="fbs" name="fbs">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </select><br>
+
+      <label for="restecg">Resting Electrocardiographic Results:</label>
+      <select id="restecg" name="restecg">
+        <option value="0">Normal</option>
+        <option value="1">ST-T wave abnormality</option>
+        <option value="2">Left ventricular hypertrophy</option>
+      </select><br>
+
+      <label for="thalach">Maximum Heart Rate Achieved:</label>
+      <input type="number" id="thalach" name="thalach"><br>
+
+      <label for="exang">Exercise Induced Angina:</label>
+      <select id="exang" name="exang">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </select><br>
+
+      <label for="oldpeak">ST Depression Induced by Exercise Relative to Rest:</label>
+      <input type="number" id="oldpeak" name="oldpeak"><br>
+
+      <label for="slope">Slope of the Peak Exercise ST Segment:</label>
+      <select id="slope" name="slope">
+        <option value="1">Upsloping</option>
+        <option value="2">Flat</option>
+        <option value="3">Downsloping</option>
+      </select><br>
+
+      <label for="ca">Number of Major Vessels Colored by Flourosopy:</label>
+      <input type="number" id="ca" name="ca"><br>
+
+      <label for="thal">Thalassemia:</label>
+      <select id="thal" name="thal">
+        <option value="3">Normal</option>
+        <option value="6">Fixed defect</option>
+        <option value="7">Reversible defect</option>
+      </select><br>
+
+      <button type="submit" value="Submit">predict</button>
+    </form>
+    <br>
+    <div>
+        {{prediction_text}}
+    </div>
+  </body>
+</html>
